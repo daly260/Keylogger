@@ -32,11 +32,48 @@ Since Google blocks direct login from less secure apps, you need to generate an 
 3. Generate and **copy the password**.
 4. Replace `your_email@gmail.com` and `your_app_password` in the script.
 
-### 4. **Run the Script**
-Run the keylogger script using:
+## Running the Script
+
+### Windows Users
+1. Run the keylogger script using:
 ```bash
 python keylogger.py
 ```
+2. **Convert to .exe (Optional)**:
+   - Install PyInstaller:
+   ```bash
+   pip install pyinstaller
+   ```
+   - Create an executable:
+   ```bash
+   pyinstaller --onefile --noconsole keylogger.py
+   ```
+   or try :
+```bash
+pyinstaller --onefile --noconsole --hidden-import=pynput keylogger.py
+```
+   - The executable file will be inside the `dist/` folder.
+   - Move `keylogger.exe` to your desired location and run it.
+
+### Ubuntu/Linux Users
+1. Run the keylogger script using:
+```bash
+python3 keylogger.py
+```
+2. **Convert to Executable (Optional)**:
+   - Install PyInstaller:
+   ```bash
+   pip install pyinstaller
+   ```
+   - Create an executable:
+   ```bash
+   pyinstaller --onefile keylogger.py
+   ```
+   - The executable file will be inside the `dist/` folder.
+   - Run the executable using:
+   ```bash
+   ./dist/keylogger
+   ```
 
 ## How It Works
 1. The script starts listening for keystrokes.
@@ -60,4 +97,3 @@ python keylogger.py
 ---
 ### **Disclaimer**
 **Use this script responsibly. Unauthorized use of keyloggers is illegal and punishable by law.**
-
